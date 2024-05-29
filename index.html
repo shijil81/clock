@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>clock</title>
+    <link rel="stylesheet" href="./style.css">
+    <!-- bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+</head>
+<body>
+     <div class="row">
+        <div class="col-md-1"></div>
+        <div id="clock" class="col-md-10 d-flex justify-content-center align-items-center dclock" style="width: 100%; height: 100vh;">
+                <h1 id="result"></h1>
+        </div>
+        <div class="col-md-1"></div>
+     </div>
+</body>
+<script>
+    function getTime(){
+        const Time=new Date()
+        console.log(Time);
+        const hr=Time.getHours()
+        console.log(hr);
+        const min=Time.getMinutes()
+        console.log(min);
+        const sec=Time.getSeconds()
+        console.log(sec);
+        setTimeout(()=>{getTime(),1000})
+        result.innerHTML=`${hr}:${min}:${sec} ${hr>=12?'PM':'AM'}`
+    }
+    getTime()
+</script>
+</html>
